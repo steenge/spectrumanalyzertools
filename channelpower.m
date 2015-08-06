@@ -1,11 +1,11 @@
 function res = channelpower(IP, tech, ch, bw, NoSamples, notes)
 
 pauseShort=0.15;
-sb = 20; % sb [MHz] added to freq span on each side of bw
+sb = 20; % sideband [MHz] added to freq span on each side of bw
 
 % tech = 24 / 5
 % ch = 1-13 OR 36-140 depending on tech
-% NoSamples = number os sales to measure. result will be mean(samples)
+% NoSamples = number of samples to measure. result will be mean(samples)
 % bw = if tech=24, bw = 20, 40 # if tech = 5, bw = 40, 80, 160
 
 switch (tech)
@@ -113,7 +113,7 @@ pause(pauseShort)
 t.write(['CALCAMAX']);
 pause(pauseShort)
 
-garbage0=t.read(); % tøm buffer
+garbage0=t.read(); % tÃ¸m buffer
 pause(pauseShort)
 
 for idx=1:NoSamples
@@ -129,7 +129,7 @@ for idx=1:NoSamples
 
     pause(15);
 
-    garbage0=t.read(); % tøm buffer
+    garbage0=t.read(); % tÃ¸m buffer
     pause(pauseShort)
     chPwr(idx) = readParm(t, 'PWCH?');
 
