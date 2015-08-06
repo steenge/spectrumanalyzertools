@@ -3,6 +3,7 @@ function res = channelpower(IP, tech, ch, bw, NoSamples, notes)
 pauseShort=0.15;
 sb = 20; % sideband [MHz] added to freq span on each side of bw
 
+% IP = IP address of instrument
 % tech = 24 / 5
 % ch = 1-13 OR 36-140 depending on tech
 % NoSamples = number of samples to measure. result will be mean(samples)
