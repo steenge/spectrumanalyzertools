@@ -54,7 +54,7 @@ dRefUnit = readParm(t, 'AUNITS?');
 t.write('DLIM0');
 pause(pauseShort)
 
-garbage0=t.read(); % tøm buffer
+garbage0=t.read(); % tÃ¸m buffer
 pause(pauseShort)
 tic
 x=1;
@@ -72,7 +72,7 @@ for i=1:NoSamples
         tmp1 = (res-1792)/(14592-1792); % Skaler til 0:1 intervallet
         if (length(tmp1) == 1001)
             disp(['ok, ' num2str(100*(x/NoSamples)) '% complete'])
-            samples{x}=(tmp1*10*dBperDiv)+(refLevel-(10*dBperDiv)); % Skaler til skærmformat, reflevel og antal db per div afgør område    
+            samples{x}=(tmp1*10*dBperDiv)+(refLevel-(10*dBperDiv)); % Skaler til skÃ¦rmformat, reflevel og antal db per div afgÃ¸r omrÃ¥de    
             time(x)=toc;
 
 
@@ -160,11 +160,6 @@ set(gca, 'Ytick', linspace(1,size(samples, 1), 10), 'YtickLabel', yticklabels)
 
 xticklabels= 0:round(100*(time(length(time))/60)/10)/100:round(time(length(time))/60);
 set(gca, 'Xtick', linspace(1,size(samples, 2), 10), 'XtickLabel', xticklabels)
-
-
-% for hver frekvens, for hele serien lav peak detect. tæl antal peaks -
-% hvis mere end X%, så vælg peak værdi. Hvis under X%, så beregn avg for
-% serien
 
 
 
